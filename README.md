@@ -23,8 +23,8 @@ you may change, add, or remove any of these from [FileWatchSetup.ps1](https://gi
 ### Adjusting file copy process
 
 By default this tool handles some basic cases where a file changes and it gets moved to the appropriate place in the webroot.  For example:
-(source)\bin -> (webroot)\bin
-(source)\App_Config\Include -> (webroot)\App_Config\Include
+#### (source)\bin -> (webroot)\bin
+#### (source)\App_Config\Include -> (webroot)\App_Config\Include
 
 You can change what types of files are managed and how they are managed in the [DeploymentDefinitions.ps1](https://github.com/JeffDarchuk/HelixFileWatcher/blob/master/DeploymentDefinitions.ps1)
 the magic happens with a hashtable that's a string to script block object.  When a watcher finds a file with an extention matching what is in the hashtable, it executes the script block with the parameters Path, OldPath (if a rename) and a switch for deleted (if deleted) then it's up to your script block to decide what happens to it.
