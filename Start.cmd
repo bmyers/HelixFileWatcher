@@ -1,0 +1,1 @@
+@powershell.exe -ExecutionPolicy Unrestricted %~dp0\StartFileWatch.ps1
