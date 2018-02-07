@@ -70,7 +70,7 @@ $global:FileWatchActions.Add(".cshtml", {
 		$Delete
 	)
 	$index = $Path.IndexOf("\Views", 5)
-	Copy-ItemToWebroot -Path $Path -OldPath $OldPath -Delete $Delete -Index $index -IntermediatePath "\Areas\Demo"
+	Copy-ItemToWebroot -Path $Path -OldPath $OldPath -Delete $Delete -Index $index
 } )
 
 $global:FileWatchActions.Add(".config", {
