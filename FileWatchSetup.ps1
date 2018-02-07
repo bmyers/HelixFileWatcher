@@ -43,22 +43,24 @@ function Add-Watcher{
 	
 	$Watcher.EnableRaisingEvents = $true
 }
-Resolve-Path "$SourceDirectory/*/App_Config/Include" | ForEach-Object{
+
+
+Resolve-Path "$SourceDirectory/*/*/code/App_Config/Include" | ForEach-Object{
 	Write-Host "Adding watch location: $_" -ForegroundColor Yellow
 	Add-Watcher $_ | Out-Null
 }
 
-Resolve-Path "$SourceDirectory/*/Views" | ForEach-Object{
+Resolve-Path "$SourceDirectory/*/*/code/Views" | ForEach-Object{
 	Write-Host "Adding watch location: $_" -ForegroundColor Yellow	
 	Add-Watcher $_ | Out-Null
 }
 
-Resolve-Path "$SourceDirectory/*/bin" | ForEach-Object{
+Resolve-Path "$SourceDirectory/*/*/code/bin" | ForEach-Object{
 	Write-Host "Adding watch location: $_" -ForegroundColor Yellow
 	Add-Watcher $_ | Out-Null
 }
 
-Resolve-Path "$SourceDirectory/*/Assets" | ForEach-Object {
+Resolve-Path "$SourceDirectory/*/*/code/assets" | ForEach-Object {
 	Write-Host "Adding watch location: $_" -ForegroundColor Yellow
 	Add-Watcher $_ | Out-Null
 }
